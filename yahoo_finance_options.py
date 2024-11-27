@@ -33,10 +33,13 @@ print("Puts:")
 print(option_chain.puts)  # Abrufen der Put-Optionen
 
 # 4. Abrufen der impliziten Volatilität und anderer Daten aus den Optionspreisen
-# Hier extrahierst du spezifische Daten wie Bid, Ask, Last, Strike-Preis, Open Interest, Handelsvolumen
-option_data = option_chain.calls  # Du kannst auch die Put-Daten verwenden
+# Hier werden spezifische Daten wie Bid, Ask, Last, Strike-Preis, Open Interest, Handelsvolumen extrahiert
+option_data_calls = option_chain.calls   
 print("\nOption Data (Calls):")
-print(option_data[['contractSymbol', 'lastPrice', 'ask', 'bid', 'strike', 'impliedVolatility', 'volume', 'openInterest']])
+print(option_data_calls[['contractSymbol', 'lastPrice', 'ask', 'bid', 'strike', 'impliedVolatility', 'volume', 'openInterest']])
+option_data_puts = option_chain.puts
+print("\nOption Data (Puts):")
+print(option_data_puts[['contractSymbol', 'lastPrice', 'ask', 'bid', 'strike', 'impliedVolatility', 'volume', 'openInterest']])
 
 # 5. Abrufen des VIX (Volatility Index)
 vix = yf.Ticker('^VIX')  # Ticker für den VIX Index
