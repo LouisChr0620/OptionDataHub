@@ -11,11 +11,8 @@ historical_data = ticker.history(period="1y")  # Daten der letzten 1 Jahr
 print("Historical Data:")
 print(historical_data)
 
-# 2. Abrufen von Dividenden und Corporate Actions
-dividends = ticker.dividends  # Dividenden
+# 2. Abrufen von Corporate Actions (Dividenden und Share Splits)
 actions = ticker.actions  # Corporate Actions
-print("\nDividends:")
-print(dividends)
 print("\nCorporate Actions:")
 print(actions)
 
@@ -26,11 +23,11 @@ print(options)
 
 # Abrufen der Optionen-Daten für ein bestimmtes Verfallsdatum (z. B. der erste Verfallstermin)
 option_chain = ticker.option_chain(options[0])  # Wählt das erste verfügbare Verfallsdatum
-print("\nOption Chain Data for Expiration Date:", options[0])
-print("Calls:")
-print(option_chain.calls)  # Abrufen der Call-Optionen
-print("Puts:")
-print(option_chain.puts)  # Abrufen der Put-Optionen
+# print("\nOption Chain Data for Expiration Date:", options[0])
+# print("Calls:")
+# print(option_chain.calls)  # Abrufen der Call-Optionen
+# print("Puts:")
+# print(option_chain.puts)  # Abrufen der Put-Optionen
 
 # 4. Abrufen der impliziten Volatilität und anderer Daten aus den Optionspreisen
 # Hier werden spezifische Daten wie Bid, Ask, Last, Strike-Preis, Open Interest, Handelsvolumen extrahiert
@@ -43,6 +40,6 @@ print(option_data_puts[['contractSymbol', 'lastPrice', 'ask', 'bid', 'strike', '
 
 # 5. Abrufen des VIX (Volatility Index)
 vix = yf.Ticker('^VIX')  # Ticker für den VIX Index
-vix_data = vix.history(period="1y")  # VIX-Daten der letzten 1 Jahr
+vix_data = vix.history(period="1y")  # VIX-Daten der letzten 1 Jahr(e)
 print("\nVIX Data:")
 print(vix_data)
